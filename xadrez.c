@@ -1,13 +1,12 @@
 #include <stdio.h>
 
 int main(){
-
-    int i = 0;
-    int j = 0;
-    int k = 0;
-
+ 
+    int j; 
+    int k;
+    
     printf("Movimento da torre:\n");
-    for ( i = 0; i < 5; i++)
+    for (int i = 0; i < 5; i++)
 {
     printf("Direita\n");
 }
@@ -26,5 +25,15 @@ int main(){
  
 }   while (k < 8);
 
-    return 0;
+   printf("Movimento do cavalo\n");
+   for (int l = 1; l < 3; l++)
+{
+   printf("Cavalo se moveu para baixo\n");
+   for (int N= 1;N < l; N++)
+{
+    printf("Cavalo se moveu para esquerda\n");
+}
+}
+return 0;
+
 }
