@@ -1,39 +1,54 @@
 #include <stdio.h>
 
-int main(){
- 
-    int j; 
-    int k;
+void movimentotorre (int movimento) {
+    if(movimento > 0){
     
-    printf("Movimento da torre:\n");
-    for (int i = 0; i < 5; i++)
-{
-    printf("Direita\n");
+    printf("A torre se movimentou para direita\n");
+    
+    movimentotorre (movimento - 1);
 }
-
-    printf("Movimento bispo:\n");
-    while (j < 5 )
-{
-    printf("Cima, Direita\n");
-    j++;
 }
-    printf("Movimento Da Rainha:\n");
+void movimentobispo (int movimento){
+    
     do
-{
-    printf("Esquerda\n");
-    k++;
- 
-}   while (k < 8);
+    {
+        printf("o bispo se movientou para cima\n");
+        printf("o bispo se movimentou para direita\n");
+        movimento --;
+    
+    
+    }while (movimento != 0 );   
+}
+void movimentorainha (int movimento){
+if (movimento > 0){
+    printf ("A rainha se movimentou para esquerda\n");
 
-   printf("Movimento do cavalo\n");
-   for (int l = 1; l < 3; l++)
-{
-   printf("Cavalo se moveu para baixo\n");
-   for (int N= 1;N < l; N++)
-{
-    printf("Cavalo se moveu para esquerda\n");
+    movimentorainha (movimento - 1);
 }
+
 }
+
+void movimentocavalo (int cavalo){
+for (int i = 1; i < cavalo; i++){
+    
+    printf("O cavalo se moveu para baixo\n");
+    int j = 1;
+    while (j < i)
+    {
+     j++;
+     printf("O cavalo se moveu para direita\n");  
+    }
+
+}
+
+}
+
+int main(){
+
+movimentotorre(5);
+movimentobispo (5);
+movimentorainha (8);
+movimentocavalo (3);
 return 0;
 
 }
